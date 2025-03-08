@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "B Nazanin", Arial, Helvetica, sans-serif;
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.chat-container {
+  background-color: #fff;
+  width: 100%;
+  max-width: 450px;
+  height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  background-color: #0078d4;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px 10px 0 0;
+}
+
+.messages {
+  padding: 15px;
+  overflow-y: auto;
+  flex-grow: 1;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-direction: column; /* این خط باعث میشه که پیام‌ها به صورت عمودی زیر هم نمایش داده بشن */
+  gap: 10px; /* فاصله بین پیام‌ها */
+}
+
+.message {
+  max-width: 70%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  position: relative;
+  word-wrap: break-word;
+  display: inline-block;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.message.mine {
+  background-color: #d1f7c4;
+  margin-left: auto;
+  text-align: right;
+}
+
+.message.theirs {
+  background-color: #e1e1e1;
+  margin-right: auto;
+  text-align: left;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.input-container {
+  display: flex;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 0 0 10px 10px;
+  align-items: center;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-container input {
+  width: 80%;
+  padding: 10px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+}
+
+.input-container input:focus {
+  border-color: #0078d4;
+}
+
+.input-container button {
+  background-color: #0078d4;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.input-container button:hover {
+  background-color: #005fa3;
+}
+
+/* Login Page */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+.login-container input {
+  padding: 10px;
+  width: 80%;
+  margin-bottom: 20px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.login-container button {
+  width: 80%;
+  padding: 12px;
+  border-radius: 25px;
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-container button:hover {
+  background-color: #005fa3;
+}
+.notification {
+  border-radius: 15px;
+  position: absolute;
+  top: 0;
+  right: 5px;
+
+  color: rgb(19, 19, 19);
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 1.2em;
+  margin: 10px 0;
+  display: none;
+}

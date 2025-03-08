@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Telegram-like Chat</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .mine {
+        background-color: #c6e1f1;
+        align-self: flex-end;
+      }
+
+      .theirs {
+        background-color: #f1f0f0;
+        align-self: flex-start;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <!-- Login Page -->
+    <div id="loginContainer" class="login-container">
+      <h2>Enter your username</h2>
+      <input id="usernameInput" type="text" placeholder="Enter your username" />
+      <button onclick="startChat()">Start Chat</button>
+    </div>
+
+    <!-- Chat Page -->
+    <div id="chatContainer" class="chat-container" style="display: none">
+      <div class="chat-header" id="chatHeader">Welcome to the chat</div>
+      <div id="messages" class="messages"></div>
+      <div class="input-container">
+        <input id="messageInput" type="text" placeholder="Type a message..." />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+      <!-- Logout Button -->
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="indexApp.js"></script>
+  </body>
+</html>
